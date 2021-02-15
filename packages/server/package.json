@@ -1,5 +1,5 @@
 {
-  "name": "@grpc/server",
+  "name": "@dalle/server",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
