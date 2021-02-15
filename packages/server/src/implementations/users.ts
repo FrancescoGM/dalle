@@ -44,21 +44,21 @@ export default {
     const body: Update = request
     const user = await User.update(body)
     callback(null, { user })
+  },
+  async loginUser(
+    { request }: ServerUnaryCall<any>,
+    callback: sendUnaryData<any>
+  ) {
+    const { email, password }: SignIn = request
+    const user = await User.findOne({ email })
+
+    if (!user)
+      return callback({ name: 'error', message: 'User not found' }, null)
+    if (!(await user.compareHash(password)))
+      return callback({ name: 'error', message: 'Invalid password' }, null)
+
+    if (user.id) {
+      callback(null, { token: User.generateToken(user.id) })
+    }
   }
-  // async signIn(
-  //   { request }: ServerUnaryCall<any>,
-  //   callback: sendUnaryData<any>
-  // ) {
-  //   const { email, password }: SignIn = request
-  //   const user = await User.findOne({ email })
-
-  //   if (!user)
-  //     return callback({ name: 'error', message: 'User not found' }, null)
-  //   if (!(await user.compareHash(password)))
-  //     return callback({ name: 'error', message: 'Invalid password' }, null)
-
-  //   if (user.id) {
-  //     callback(null, { token: User.generateToken(user.id) })
-  //   }
-  // }
 }

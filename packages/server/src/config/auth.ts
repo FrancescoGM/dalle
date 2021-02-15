@@ -1,6 +1,4 @@
-require('dotenv').config({
-  path: process.env.NODE_ENV === 'dev' ? '.env.development' : '.env.production'
-})
+require('./dotenv')
 interface AuthProps {
   secret: string | any
 }
