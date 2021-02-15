@@ -1,0 +1,37 @@
+syntax = "proto3";
+import "Shared.proto";
+
+message User {
+  int32 id = 1;
+  string email = 2;
+  string username = 3;
+  string password = 4;
+  string dateOfBirth = 5;
+}
+message UpdateUser {
+  optional string email = 1;
+  optional string username = 2;
+  optional string password = 3;
+  optional string dateOfBirth = 4;
+}
+message CreateUserRequest {
+  required string email = 1;
+  required string username = 2;
+  required string password = 3;
+  required string dateOfBirth = 4;
+}
+message UserResponse {
+  User user = 1;
+}
+message UpdateUserRequest {
+  int32 id = 1;
+  UpdateUser updateUserParams = 2;
+}
+message ReadUserRequest {
+  int32 id = 1;
+}
+service UserService {
+  rpc read(ReadUserRequest) returns (UserResponse);
+  rpc create(CreateUserRequest) returns (UserResponse);
+  rpc update(UpdateUserRequest) returns (UserResponse);
+}
