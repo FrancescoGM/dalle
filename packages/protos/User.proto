@@ -2,7 +2,7 @@ syntax = "proto3";
 import "Shared.proto";
 
 message User {
-  int32 id = 1;
+  string id = 1;
   string email = 2;
   string username = 3;
   string password = 4;
@@ -15,20 +15,26 @@ message UpdateUser {
   optional string dateOfBirth = 4;
 }
 message CreateUserRequest {
-  required string email = 1;
-  required string username = 2;
-  required string password = 3;
-  required string dateOfBirth = 4;
+   string email = 1;
+   string username = 2;
+   string password = 3;
+   string dateOfBirth = 4;
+}
+message UserProps {
+  string id = 1;
+  string email = 2;
+  string username = 3;
+  string dateOfBirth = 4;
 }
 message UserResponse {
-  User user = 1;
+  UserProps user = 1;
 }
 message UpdateUserRequest {
-  int32 id = 1;
-  UpdateUser updateUserParams = 2;
+  string id = 1;
+  UpdateUser user = 2;
 }
 message ReadUserRequest {
-  int32 id = 1;
+  string id = 1;
 }
 message LoginUserRequest {
   string email = 1;

@@ -3,7 +3,7 @@ const { name } = require('./package.json')
 module.exports = {
   displayName: name,
   name,
-  preset: '@shelf/jest-mongodb',
+  // preset: '@shelf/jest-mongodb',
   clearMocks: true,
   collectCoverage: true,
   collectCoverageFrom: ["src/**"],
@@ -13,6 +13,5 @@ module.exports = {
     "./src/index",
     "./src/models"
   ],
-  preset: 'ts-jest',
   testEnvironment: 'node'
 }

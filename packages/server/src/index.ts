@@ -2,21 +2,13 @@ import grpc from 'grpc'
 import path from 'path'
 import './database'
 import './config/dotenv'
-import { Options } from '@grpc/proto-loader'
 const protoLoader = require('@grpc/proto-loader')
 import User from './implementations/users'
-
-const options: Options = {
-  keepCase: true,
-  longs: String,
-  enums: String,
-  defaults: true,
-  oneofs: true
-}
+import { LoaderConfig } from './config/grpc-config'
 
 const packageDefinition = protoLoader.loadSync(
   path.resolve(__dirname, '..', '..', 'protos', 'User.proto'),
-  options
+  LoaderConfig
 )
 const UserProto = grpc.loadPackageDefinition(packageDefinition) as any
 
