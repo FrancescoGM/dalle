@@ -15,7 +15,7 @@ interface UserDocument extends User {
 }
 
 interface UserModel extends Model<UserDocument> {
-  generateToken(id: string): string
+  generateJWT(id: string): string
 }
 
 const UserSchema: mongoose.Schema<User, any> = new Schema(
@@ -33,7 +33,6 @@ const UserSchema: mongoose.Schema<User, any> = new Schema(
     password: {
       type: String,
       required: true,
-      select: false,
       check: {
         min: 6,
         max: 20
@@ -67,9 +66,9 @@ UserSchema.methods.compareHash = function (password: string) {
   return bcrypt.compare(password, this.password)
 }
 
-UserSchema.statics.generateToken = (id: string) => {
-  return jwt.sign({ id }, authConfig.secret, {
-    expiresIn: 86400
+UserSchema.statics.generateJWT = (id: string) => {
+  return jwt.sign({ id }, authConfig.JWT_HASH, {
+    expiresIn: authConfig.JWT_TIME || 86400
   })
 }
 

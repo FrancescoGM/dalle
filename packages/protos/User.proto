@@ -1,5 +1,4 @@
 syntax = "proto3";
-import "Shared.proto";
 
 message User {
   string id = 1;

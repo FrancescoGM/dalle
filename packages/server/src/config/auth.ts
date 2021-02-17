@@ -1,10 +1,12 @@
 require('./dotenv')
 interface AuthProps {
-  secret: string | any
+  JWT_HASH: string | any
+  JWT_TIME: number | any
 }
 
 const authConfig: AuthProps = {
-  secret: process.env.JWT_HASH
+  JWT_HASH: process.env.JWT_HASH,
+  JWT_TIME: process.env.JWT_TIME
 }
 
 export default authConfig
