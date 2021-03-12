@@ -1,5 +1,5 @@
 {
-  "name": "@dalle/eslint-config",
+  "name": "@study/eslint-config",
   "version": "1.0.0",
   "main": ".eslintrc.json",
   "license": "MIT",
