@@ -1,6 +1,6 @@
 <h1 align='center' style='color: #2B33FF; font-weight:800; font-style: italic'>📚 Study</h1>
 
-<p>Esse projeto foi desenvolvido afim de aprender novas tacnologias na stack javascript. <span style='color: #2B33FF; font-weight:800; font-style: italic' >Study</span> é uma plataforma para centralizar o conteúdo e ferramentas pra os alunos e professores, por conseguinte disponibilizar uma solução eficiente e fácil de utilizar para resolver o problema do ensino a distância</p>
+<p>Esse projeto foi desenvolvido afim de aprender novas tacnologias na stack javascript. <span style='color: #2B33FF; font-weight:800; font-style: italic' >Study</span> é uma plataforma para centralizar o conteúdo e ferramentas pra os alunos e professores, por conseguinte disponibilizar uma solução eficiente e fácil de utilizar, para resolver o problema do ensino a distância.</p>
 
 <table>
   <thead>
