@@ -14,6 +14,7 @@ message AuthenticateJWTRequest {
 }
 message AuthenticateJWTResponse {
   bool isValid = 1;
+  string id = 2;
 }
 
 service AuthenticateService {

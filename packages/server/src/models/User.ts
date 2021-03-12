@@ -4,6 +4,7 @@ export interface Create {
   password: string
   cpf: string
   email: string
+  type: 'student' | 'teacher'
   dateOfBirth: Date
 }
 export interface Update {

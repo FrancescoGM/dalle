@@ -5,7 +5,8 @@ message User {
   string email = 2;
   string username = 3;
   string password = 4;
-  string dateOfBirth = 5;
+  string type = 5;
+  string dateOfBirth = 6;
 }
 message UpdateUser {
   optional string email = 1;
@@ -14,16 +15,18 @@ message UpdateUser {
   optional string dateOfBirth = 4;
 }
 message CreateUserRequest {
-   string email = 1;
-   string username = 2;
-   string password = 3;
-   string dateOfBirth = 4;
+  string email = 1;
+  string username = 2;
+  string password = 3;
+  string type = 4;
+  string dateOfBirth = 5;
 }
 message UserProps {
   string id = 1;
   string email = 2;
   string username = 3;
-  string dateOfBirth = 4;
+  string type = 4;
+  string dateOfBirth = 5;
 }
 message UserResponse {
   UserProps user = 1;

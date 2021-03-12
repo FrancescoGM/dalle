@@ -16,7 +16,7 @@ export default {
       return callback({ name: 'error', message: 'Invalid password' }, null)
 
     if (user._id) {
-      callback(null, { token: User.generateJWT(user.id) })
+      callback(null, { token: User.generateJWT(user._id) })
     }
   },
   async authenticateJWT(
@@ -37,10 +37,10 @@ export default {
     if (scheme !== 'Bearer')
       return callback({ name: 'error', message: 'Bearer malformado!' }, null)
 
-    jwt.verify(token, authConfig.JWT_HASH, (err: any) => {
+    jwt.verify(token, authConfig.JWT_HASH, (err: any, decoded: any) => {
       if (err) return callback(null, { isValid: false })
 
-      return callback(null, { isValid: true })
+      return callback(null, { isValid: true, id: decoded.id })
     })
   }
 }

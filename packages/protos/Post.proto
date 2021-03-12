@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "Shared.proto";
+
+message Post {
+  string user = 1;
+  string post = 2;
+}
+
+message ListPostResponse {
+  repeated Post posts = 1;
+}
+
+message ListWhereIdRequest {
+  string user = 1;
+}
+
+service PostService {
+  rpc create(Post) returns (Shared.Void);
+  rpc list(Shared.Void) returns (ListPostResponse);
+  rpc listWhereId(ListWhereIdRequest) returns (ListPostResponse);
+}

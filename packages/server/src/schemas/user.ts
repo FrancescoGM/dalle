@@ -8,6 +8,7 @@ type User = Document & {
   password: string
   email: string
   dateOfBirth: Date
+  type: 'student' | 'teacher'
 }
 
 interface UserDocument extends User {
@@ -44,6 +45,12 @@ const UserSchema: mongoose.Schema<User, any> = new Schema(
       trim: true,
       unique: true,
       required: true
+    },
+    type: {
+      type: String,
+      required: true,
+      notEmpty: true,
+      trim: true
     },
     dateOfBirth: {
       type: Date,

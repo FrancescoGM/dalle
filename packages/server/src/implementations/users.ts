@@ -1,6 +1,5 @@
 import { ServerUnaryCall, sendUnaryData } from 'grpc'
 import User from '../schemas/user'
-import { SignIn } from '../models/User'
 import { clearEmptyValues } from '../utils/clearEmptyValues'
 
 export default {
@@ -48,20 +47,4 @@ export default {
       return callback({ name: 'error', message: error.message }, null)
     }
   }
-  // async loginUser(
-  //   { request }: ServerUnaryCall<any>,
-  //   callback: sendUnaryData<any>
-  // ) {
-  //   const { email, password }: SignIn = request.user
-  //   const user = await User.findOne({ email })
-
-  //   if (!user)
-  //     return callback({ name: 'error', message: 'User not found' }, null)
-  //   if (!(await user.compareHash(password)))
-  //     return callback({ name: 'error', message: 'Invalid password' }, null)
-
-  //   if (user.id) {
-  //     callback(null, { token: User.generateToken(user.id) })
-  //   }
-  // }
 }
