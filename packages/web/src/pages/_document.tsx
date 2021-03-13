@@ -43,7 +43,7 @@ export default class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <meta name="description" content="Study plataform" />
-          <link rel="shortcut icon" type="image/svg+xml" href="/favicon.svg" />
+          <link rel="shortcut icon" href="/favicon.ico" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
             href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"

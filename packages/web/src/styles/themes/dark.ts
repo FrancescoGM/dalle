@@ -18,6 +18,9 @@ export default {
     buttonBlueBackground: '#3344DD',
     buttonBlueBackgroundHover: '#2233DD',
     buttonYellowBackground: '#FFB800',
-    buttonYellowBackgroundHover: '#EAA900'
+    buttonYellowBackgroundHover: '#EAA900',
+    logoColorText: '#2B33FF',
+    containerColor: '#333333',
+    linkTextColor: '#0085FF'
   }
 }

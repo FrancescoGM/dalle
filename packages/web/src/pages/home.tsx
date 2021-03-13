@@ -1,12 +1,17 @@
 import React from 'react'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { IoLogInOutline } from 'react-icons/io5'
+
 import { Container, ImageSection, TextSection } from '../styles/pages/Home'
 
 const Home: React.FC = () => {
   const { push } = useRouter()
   return (
     <Container>
+      <Head>
+        <title>Study</title>
+      </Head>
       <TextSection>
         <h1>Plataforma de estudos. Agora para todos.</h1>
         <p>

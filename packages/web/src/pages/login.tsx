@@ -1,10 +1,12 @@
 import { FormHandles } from '@unform/core'
+import React, { useRef, useState } from 'react'
+import Head from 'next/head'
 import { Form } from '@unform/web'
 import { useRouter } from 'next/router'
-import React, { useRef } from 'react'
-import { useState } from 'react'
+
 import RequiredInput from '../components/RequiredInput'
-import { Logo } from '../styles/components/Logo'
+import Logo from '../components/Logo'
+
 import {
   ButtonContainer,
   CheckboxContainer,
@@ -22,8 +24,11 @@ const Login: React.FC = () => {
 
   return (
     <Container>
+      <Head>
+        <title>Study | Entrar</title>
+      </Head>
       <Form ref={formRef} onSubmit={onSubmit}>
-        <Logo>Study</Logo>
+        <Logo />
         <section>
           <RequiredInput name="email" label="E-mail" type="email" />
           <RequiredInput name="password" label="Senha" type={passwordType} />

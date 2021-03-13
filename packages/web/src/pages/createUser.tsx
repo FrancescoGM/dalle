@@ -1,12 +1,14 @@
+import React, { useRef } from 'react'
+import Head from 'next/head'
+import { useRouter } from 'next/router'
 import { FormHandles } from '@unform/core'
 import { Form } from '@unform/web'
-import { useRouter } from 'next/router'
-import React from 'react'
-import { useRef } from 'react'
+
 import Button from '../components/Button'
 import Radio from '../components/RadioInput'
 import RequiredInput from '../components/RequiredInput'
-import { Logo } from '../styles/components/Logo'
+import Logo from '../components/Logo'
+
 import {
   ButtonContainer,
   Container,
@@ -23,8 +25,11 @@ const CreateUser: React.FC = () => {
   }
   return (
     <Container>
+      <Head>
+        <title>Study | Criar conta</title>
+      </Head>
       <Form ref={formRef} onSubmit={onSubmit}>
-        <Logo>Study</Logo>
+        <Logo />
 
         <InputContainer>
           <RequiredInput name="name" label="Nome" />
