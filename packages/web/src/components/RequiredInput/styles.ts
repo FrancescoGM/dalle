@@ -8,7 +8,7 @@ export const Container = styled.div`
     width: 100%;
     height: 52px;
 
-    padding: 1rem 2rem;
+    padding: 1rem;
     border-radius: 4px;
     border: 1px solid ${props => props.theme.colors.containerColor};
 
@@ -22,14 +22,13 @@ export const Container = styled.div`
     -webkit-appearance: none;
     transition: 0.2s;
 
-    &:focus {
+    &:focus,
+    &:valid {
       border: 1px solid ${props => props.theme.colors.primaryColor};
-    }
-    &:focus ~ label {
-      color: ${props => props.theme.colors.primaryColor};
     }
     &:focus ~ label,
     &:valid ~ label {
+      color: ${props => props.theme.colors.primaryColor};
       height: auto;
       transform: translate(-4px, -25px);
       font-size: 14px;

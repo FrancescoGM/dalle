@@ -45,7 +45,7 @@ const Login: React.FC = () => {
           </button>
           <button type="submit">Entrar</button>
         </ButtonContainer>
-        <a>Não Possui conta ainda?</a>
+        <a onClick={() => push('/createUser')}>Não Possui conta ainda?</a>
       </Form>
     </Container>
   )

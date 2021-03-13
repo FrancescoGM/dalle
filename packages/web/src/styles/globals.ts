@@ -14,5 +14,10 @@ export default createGlobalStyle`
     width: 100%;
     height: 100%;
   }
-
+  a {
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    color: ${props => props.theme.colors.linkTextColor};
+  }
 `

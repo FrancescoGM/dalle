@@ -42,12 +42,6 @@ export const Container = styled.main`
       flex-direction: column;
       gap: 1.1rem;
     }
-    > a {
-      cursor: pointer;
-      text-align: center;
-      text-decoration: none;
-      color: ${props => props.theme.colors.linkTextColor};
-    }
   }
 `
 
